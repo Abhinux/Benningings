@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dt30ailpcer08"]
+
+[ext_resource type="Script" uid="uid://c775hpn3l28a2" path="res://Scripts/main_menu.gd" id="1_f4fyp"]
+
+[node name="ButtonManager" type="CanvasLayer" unique_id=329362721]
+script = ExtResource("1_f4fyp")
+
+[node name="Button" type="Button" parent="." unique_id=2029110272]
+offset_left = 418.0
+offset_top = 353.0
+offset_right = 730.0
+offset_bottom = 438.0
+text = "Options"
+
+[node name="Button2" type="Button" parent="." unique_id=590368810]
+offset_left = 415.0
+offset_top = 222.0
+offset_right = 728.0
+offset_bottom = 304.0
+text = "Play"
+
+[node name="Button3" type="Button" parent="." unique_id=954387745]
+offset_left = 416.0
+offset_top = 490.0
+offset_right = 727.0
+offset_bottom = 579.0
+text = "Quit"
+
+[node name="Label" type="Label" parent="." unique_id=233559844]
+offset_right = 1155.0
+offset_bottom = 190.0
+theme_override_font_sizes/font_size = 50
+text = "Kitty Kitty Kat"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
