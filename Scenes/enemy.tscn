@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dia6qdybl78mo"]
+
+[ext_resource type="Script" uid="uid://c6kmyoaf4noap" path="res://Scripts/enemy.gd" id="1_afpow"]
+[ext_resource type="Texture2D" uid="uid://d14u6inhr7xvf" path="res://Sprites/spritesheet_dog_walk.jpeg" id="1_hghv2"]
+[ext_resource type="PackedScene" uid="uid://b1ygcbwnoaxe5" path="res://Scenes/killzone.tscn" id="2_1f0kj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1f0kj"]
+atlas = ExtResource("1_hghv2")
+region = Rect2(0, 138, 138, 138)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afpow"]
+atlas = ExtResource("1_hghv2")
+region = Rect2(138, 138, 138, 138)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_287tu"]
+atlas = ExtResource("1_hghv2")
+region = Rect2(276, 138, 138, 138)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0830c"]
+atlas = ExtResource("1_hghv2")
+region = Rect2(414, 138, 138, 138)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4kxuq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1f0kj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afpow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_287tu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0830c")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kxuq"]
+size = Vector2(87, 60)
+
+[node name="Enemy" type="Node2D" unique_id=70140191]
+script = ExtResource("1_afpow")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1928129874]
+sprite_frames = SubResource("SpriteFrames_4kxuq")
+autoplay = "default"
+
+[node name="Killzone" parent="." unique_id=1835029419 instance=ExtResource("2_1f0kj")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1453941285]
+position = Vector2(2.5, 19)
+shape = SubResource("RectangleShape2D_4kxuq")
+
+[node name="RayCastR" type="RayCast2D" parent="." unique_id=390217244]
+position = Vector2(0, 20)
+target_position = Vector2(78, 1)
+
+[node name="RayCastL" type="RayCast2D" parent="." unique_id=611751831]
+position = Vector2(3, 19)
+target_position = Vector2(-82, -1)
