@@ -1,0 +1,4 @@
+res://Scenes/gamee.tscn
+res://Scripts/game_manager.gd
+res://Scripts/character_body_2d.gd
+res://Scripts/pause.gd
